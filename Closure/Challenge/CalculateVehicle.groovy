@@ -10,7 +10,7 @@ def additionalCosts = System.in.newReader().readLine()
 additionalCosts.split(",");
 
 def calculateTotalCost = { type, listOfCost ->
-    def costs = listOfCost.collect({it as int})
+    def costs = listOfCost.split(",").collect({it as int})
     def insuranceCost = costs[0]
     def taxCost = costs[1]
     def adminCost = costs[2]

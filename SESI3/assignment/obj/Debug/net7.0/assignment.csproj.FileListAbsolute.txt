@@ -1,0 +1,14 @@
+D:\Dion\Specialization\SESI3\assignment\obj\Debug\net7.0\assignment.GeneratedMSBuildEditorConfig.editorconfig
+D:\Dion\Specialization\SESI3\assignment\obj\Debug\net7.0\assignment.AssemblyInfoInputs.cache
+D:\Dion\Specialization\SESI3\assignment\obj\Debug\net7.0\assignment.AssemblyInfo.cs
+D:\Dion\Specialization\SESI3\assignment\obj\Debug\net7.0\assignment.csproj.CoreCompileInputs.cache
+D:\Dion\Specialization\SESI3\assignment\bin\Debug\net7.0\assignment.exe
+D:\Dion\Specialization\SESI3\assignment\bin\Debug\net7.0\assignment.deps.json
+D:\Dion\Specialization\SESI3\assignment\bin\Debug\net7.0\assignment.runtimeconfig.json
+D:\Dion\Specialization\SESI3\assignment\bin\Debug\net7.0\assignment.dll
+D:\Dion\Specialization\SESI3\assignment\bin\Debug\net7.0\assignment.pdb
+D:\Dion\Specialization\SESI3\assignment\obj\Debug\net7.0\assignment.dll
+D:\Dion\Specialization\SESI3\assignment\obj\Debug\net7.0\refint\assignment.dll
+D:\Dion\Specialization\SESI3\assignment\obj\Debug\net7.0\assignment.pdb
+D:\Dion\Specialization\SESI3\assignment\obj\Debug\net7.0\assignment.genruntimeconfig.cache
+D:\Dion\Specialization\SESI3\assignment\obj\Debug\net7.0\ref\assignment.dll

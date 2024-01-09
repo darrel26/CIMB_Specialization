@@ -1,0 +1,5 @@
+Hello Dion!,
+Selamat datang di LC Bumi CIMB Niaga
+Kelas hari ini adalah :
+- ASP.NET
+- Groovy

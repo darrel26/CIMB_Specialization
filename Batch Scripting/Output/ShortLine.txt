@@ -1,0 +1,3 @@
+Baris ini pendek
+Baris ini juga pendek
+Selesai!

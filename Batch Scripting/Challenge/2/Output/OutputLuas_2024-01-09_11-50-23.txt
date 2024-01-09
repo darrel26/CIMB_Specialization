@@ -1,0 +1,3 @@
+Alas : 12
+Tinggi : 12
+Luas segitiga : 72

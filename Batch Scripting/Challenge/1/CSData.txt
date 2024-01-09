@@ -1,0 +1,4 @@
+ID Pelanggan, Jenis Layanan, Durasi (menit)
+101, Pinjaman, 15
+102, Pembukaan Rekening, 10
+103, Kartu Kredit, 5

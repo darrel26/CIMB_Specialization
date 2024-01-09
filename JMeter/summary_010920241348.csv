@@ -1,0 +1,4 @@
+Label,# Samples,Average,Min,Max,Std. Dev.,Error %,Throughput,Received KB/sec,Sent KB/sec,Avg. Bytes
+[GET] localhost api employee,120,6,0,33,2.63,0.000%,8.59537,4.99,1.35,594.5
+[GET] gorest.co.in,120,146,0,553,44.03,0.000%,8.53546,19.76,1.34,2370.9
+TOTAL,240,76,0,553,76.54,0.000%,17.02731,24.65,2.68,1482.7

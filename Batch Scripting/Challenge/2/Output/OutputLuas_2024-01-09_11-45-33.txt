@@ -1,0 +1,3 @@
+Alas : 10
+Tinggi : 20
+Luas segitiga : 100

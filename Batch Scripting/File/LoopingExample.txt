@@ -1,0 +1,9 @@
+Selamat datang di Groovy Scripting!
+Ini adalah baris yang cukup panjang.
+Baris ini pendek
+Contoh batch scripting dengan Groovy.
+Groovy sangat efisien untuk scripting.
+Baris ini juga pendek
+Automasi proses dengan Groovy.
+Ini adalah contoh baris yang sangat panjang dan detail.
+Selesai!

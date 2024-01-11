@@ -128,7 +128,6 @@ namespace TodoApp.Controllers
                 Token = jwtToken,
                 Success = true,
                 RefreshToken = refreshToken.Token
-
             };
         }
 

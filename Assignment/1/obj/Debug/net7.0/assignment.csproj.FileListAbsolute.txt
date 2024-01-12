@@ -12,3 +12,17 @@ D:\Dion\Specialization\SESI3\assignment\obj\Debug\net7.0\refint\assignment.dll
 D:\Dion\Specialization\SESI3\assignment\obj\Debug\net7.0\assignment.pdb
 D:\Dion\Specialization\SESI3\assignment\obj\Debug\net7.0\assignment.genruntimeconfig.cache
 D:\Dion\Specialization\SESI3\assignment\obj\Debug\net7.0\ref\assignment.dll
+D:\Dion\CIMB_Specialization\Assignment\1\bin\Debug\net7.0\assignment.exe
+D:\Dion\CIMB_Specialization\Assignment\1\bin\Debug\net7.0\assignment.deps.json
+D:\Dion\CIMB_Specialization\Assignment\1\bin\Debug\net7.0\assignment.runtimeconfig.json
+D:\Dion\CIMB_Specialization\Assignment\1\bin\Debug\net7.0\assignment.dll
+D:\Dion\CIMB_Specialization\Assignment\1\bin\Debug\net7.0\assignment.pdb
+D:\Dion\CIMB_Specialization\Assignment\1\obj\Debug\net7.0\assignment.GeneratedMSBuildEditorConfig.editorconfig
+D:\Dion\CIMB_Specialization\Assignment\1\obj\Debug\net7.0\assignment.AssemblyInfoInputs.cache
+D:\Dion\CIMB_Specialization\Assignment\1\obj\Debug\net7.0\assignment.AssemblyInfo.cs
+D:\Dion\CIMB_Specialization\Assignment\1\obj\Debug\net7.0\assignment.csproj.CoreCompileInputs.cache
+D:\Dion\CIMB_Specialization\Assignment\1\obj\Debug\net7.0\assignment.dll
+D:\Dion\CIMB_Specialization\Assignment\1\obj\Debug\net7.0\refint\assignment.dll
+D:\Dion\CIMB_Specialization\Assignment\1\obj\Debug\net7.0\assignment.pdb
+D:\Dion\CIMB_Specialization\Assignment\1\obj\Debug\net7.0\assignment.genruntimeconfig.cache
+D:\Dion\CIMB_Specialization\Assignment\1\obj\Debug\net7.0\ref\assignment.dll

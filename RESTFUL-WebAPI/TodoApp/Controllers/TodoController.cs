@@ -57,14 +57,14 @@ namespace TodoApp.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateItemById(int id, ItemData data)
         {
-            if(id != data.Id)
+            if (id != data.Id)
             {
                 return BadRequest();
             }
 
             var existItem = await _context.Items.FirstOrDefaultAsync(x => x.Id == id);
 
-            if(existItem == null)
+            if (existItem == null)
             {
                 return NotFound();
             }

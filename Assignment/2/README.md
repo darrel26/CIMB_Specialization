@@ -101,14 +101,14 @@
    ```
 
    | productCode | productName                       | productLine      | productScale | productVendor         | productDescription                                    | quantityInStock | buyPrice | MSRP    |
-   | ----------- | --------------------------------- | ---------------- | ------------ | --------------------- | ----------------------------------------------------- | --------------- | -------- | ------- | --- |
+   | ----------- | --------------------------------- | ---------------- | ------------ | --------------------- | ----------------------------------------------------- | --------------- | -------- | ------- |
    | CC015       | Cash Rewards Platinum Credit Card | Credit Cards     | 1:1          | Trustworthy Financial | Earn 5% cash back on everyday purchases               | 5               | 10000.00 | 200.00  |
    | CD073       | 12-Month Certificate of Deposit   | Loans            | 1:1          | Steadfast Investments | Lock in a guaranteed interest rate                    | 10              | 5000.00  | 100.00  |
    | CL022       | Personal Loan                     | Loans            | 1:1          | Reliable Bank         | Consolidate debt or finance a major purchase          | 100             | 2500.00  | 500.00  |
    | HE091       | Home Equity Loan                  | Loans            | 1:1          | Homestead Financial   | Tap into the equity of your home for cash             | 50              | 10000.00 | 450.00  |
    | IRA115      | Traditional IRA                   | Investments      | 1:1          | FutureWise Retirement | Save for retirement with tax-deductible contributions | 75              | 25000.00 | 150.00  |
    | MM049       | Money Market Account              | Investments      | 1:1          | Secure Savings Bank   | Access your funds while earning higher interest       | 500             | 25000.00 | 50.00   |
-   | SA001       | High-Yield Savings Account        | Savings Accounts | 1:1          | Bank of Serenity      | Earn competitive interest on your savings             | 650             | 2500.00  | 1000.00 | d   |
+   | SA001       | High-Yield Savings Account        | Savings Accounts | 1:1          | Bank of Serenity      | Earn competitive interest on your savings             | 650             | 2500.00  | 1000.00 |
 
 ## Relational Database
 

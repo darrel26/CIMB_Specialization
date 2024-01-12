@@ -96,7 +96,6 @@ CREATE TABLE `orders` (
 --
 
 CREATE TABLE `payments` (
-  `paymentID` int(11) NOT NULL,
   `customerNumber` int(11) NOT NULL,
   `checkNumber` varchar(50) NOT NULL,
   `paymentDate` date NOT NULL,
@@ -110,7 +109,6 @@ CREATE TABLE `payments` (
 --
 
 CREATE TABLE `productlines` (
-  `productLineID` int(11) NOT NULL,
   `productLine` varchar(50) NOT NULL,
   `textDescription` text DEFAULT NULL,
   `htmlDescription` text DEFAULT NULL,
@@ -124,7 +122,6 @@ CREATE TABLE `productlines` (
 --
 
 CREATE TABLE `products` (
-  `productID` int(11) NOT NULL,
   `productCode` varchar(50) NOT NULL,
   `productName` varchar(100) NOT NULL,
   `productLine` varchar(50) NOT NULL,
@@ -135,6 +132,8 @@ CREATE TABLE `products` (
   `buyPrice` decimal(10,2) DEFAULT NULL,
   `MSRP` decimal(10,2) DEFAULT NULL
 );
+
+
 
 --
 -- Indexes for dumped tables
@@ -180,22 +179,19 @@ ALTER TABLE `orders`
 -- Indexes for table `payments`
 --
 ALTER TABLE `payments`
-  ADD PRIMARY KEY (`paymentID`),
-  ADD UNIQUE KEY `customerNumber` (`customerNumber`,`checkNumber`);
+  ADD PRIMARY KEY (`checkNumber`)
 
 --
 -- Indexes for table `productlines`
 --
 ALTER TABLE `productlines`
-  ADD PRIMARY KEY (`productLineID`),
-  ADD UNIQUE KEY `productLine` (`productLine`);
+  ADD PRIMARY KEY (`productLine`);
 
 --
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
-  ADD PRIMARY KEY (`productID`),
-  ADD UNIQUE KEY `productCode` (`productCode`),
+  ADD PRIMARY KEY (`productCode`),
   ADD KEY `fk_productLine` (`productLine`);
 
 --

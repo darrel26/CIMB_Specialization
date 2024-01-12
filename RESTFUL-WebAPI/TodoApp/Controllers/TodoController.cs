@@ -2,9 +2,14 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using TodoApp.Data;
 using TodoApp.Models;
+using TodoApp.Models.DTOs.Responses;
+using TodoApp.Services;
 
 namespace TodoApp.Controllers
 {
@@ -12,39 +17,61 @@ namespace TodoApp.Controllers
     [ApiController]
     public class TodoController : ControllerBase
     {
-        private readonly ApiDbContext _context;
+        //private readonly apidbcontext _context;
+        private readonly ITodoService _todoService;
 
-        public TodoController(ApiDbContext context)
+        public TodoController(ITodoService todoService)
         {
-            _context = context;
+            _todoService = todoService;
         }
 
-        [HttpGet, Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-        public async Task<IActionResult> GetItems()
-        {
-            var items = await _context.Items.ToListAsync();
-            return Ok(items);
-        }
+        //[httpget, authorize(authenticationschemes = jwtbearerdefaults.authenticationscheme)]
+        //public async task<iactionresult> getitems()
+        //{
+        //    var items = await _context.items.tolistasync();
+        //    return ok(items);
+        //}
 
         [HttpPost]
-        public async Task<IActionResult> CreateItem(ItemData data)
+        public async Task<IActionResult> CreateItem([FromBody] ItemData data)
         {
             if (ModelState.IsValid)
             {
-                await _context.Items.AddAsync(data);
-                await _context.SaveChangesAsync();
+                try
+                {
+                    await _todoService.CreateItem(data);
 
-                return CreatedAtAction("GetItem", new { data.Id }, data);
+                    return Ok(new TodoResponse()
+                    {
+                        Data = data,
+                        Success = true,
+                        Errors = null
+                    });
+                }
+                catch (Exception err)
+                {
+                    return BadRequest(new TodoResponse()
+                    {
+                        Data = data,
+                        Success = true,
+                        Errors = new List<string> { err.Message }
+                    });
+                }
             }
 
-            return new JsonResult("Something went wrong") { StatusCode = 500 };
+            var errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage).ToList();
+            return BadRequest(new TodoResponse()
+            {
+                Data = data,
+                Success = true,
+                Errors = errors
+            });
         }
-
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetItemById(int id)
         {
-            var item = await _context.Items.FirstOrDefaultAsync(x => x.Id == id);
+            var item = await _todoService.GetItemById(id);
 
             if (item == null)
             {
@@ -55,40 +82,38 @@ namespace TodoApp.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateItemById(int id, ItemData data)
+        public async Task<IActionResult> UpdateItemById(int id, [FromBody] ItemData data)
         {
             if (id != data.Id)
+                if (id != data.Id)
+                {
+                    return BadRequest();
+                }
+
+            try
             {
-                return BadRequest();
+                await _todoService.UpdateItemById(id, data);
+            }
+            catch (Exception err)
+            {
+                return BadRequest(err.Message);
             }
 
-            var existItem = await _context.Items.FirstOrDefaultAsync(x => x.Id == id);
-
-            if (existItem == null)
-            {
-                return NotFound();
-            }
-
-            existItem.Title = data.Title;
-            existItem.Description = data.Description;
-            existItem.Done = data.Done;
-
-            await _context.SaveChangesAsync();
-            return Ok($"Successfully changed item data with id {id}");
+            return Ok($"successfully changed item data with id {id}");
         }
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteItem(int id)
-        {
-            var existItem = await _context.Items.FirstOrDefaultAsync(x => x.Id == id);
+        //[httpdelete("{id}")]
+        //public async task<iactionresult> deleteitem(int id)
+        //{
+        //    var existitem = await _context.items.firstordefaultasync(x => x.id == id);
 
-            if (existItem == null)
-                return NotFound();
+        //    if (existitem == null)
+        //        return notfound();
 
-            _context.Items.Remove(existItem);
-            await _context.SaveChangesAsync();
+        //    _context.items.remove(existitem);
+        //    await _context.savechangesasync();
 
-            return Ok(existItem);
-        }
+        //    return ok(existitem);
+        //}
     }
 }

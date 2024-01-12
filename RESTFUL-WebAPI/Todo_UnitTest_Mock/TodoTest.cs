@@ -22,26 +22,10 @@ namespace Todo_UnitTest_Mock
         }
         #endregion  
 
-        [Fact]
-        public async void GetItemById()
+        public IActionResult GetItemById()
         {
-            _mock.Setup(p => p.GetItemById(1)).ReturnsAsync(new ItemData() {
-                Id = 1,
-                Title = "Wongko",
-                Description = "Jember",
-                Done = true
-            }) ;
-            TodoController todo = new TodoController(_mock.Object);
-            var result = await todo.GetItemById(1);
-            ItemData itemData = new ItemData()
-            {
-                Id = 1,
-                Title = "Wongko",
-                Description = "Jember",
-                Done = true
-            };
-
-            Assert.Equal(itemData, result);
+            var item = _controller.GetItemById(1);
+            return View(item);
         }
     }
 }

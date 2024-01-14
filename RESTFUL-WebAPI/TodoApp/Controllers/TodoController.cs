@@ -17,20 +17,38 @@ namespace TodoApp.Controllers
     [ApiController]
     public class TodoController : ControllerBase
     {
-        //private readonly apidbcontext _context;
         private readonly ITodoService _todoService;
+
+        private BadRequestObjectResult ErrorHandler()
+        {
+            var errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage).ToList();
+            return BadRequest(new TodoResponse()
+            {
+                Data = null,
+                Success = false,
+                Errors = errors
+            });
+        }
 
         public TodoController(ITodoService todoService)
         {
             _todoService = todoService;
         }
 
-        //[httpget, authorize(authenticationschemes = jwtbearerdefaults.authenticationscheme)]
-        //public async task<iactionresult> getitems()
-        //{
-        //    var items = await _context.items.tolistasync();
-        //    return ok(items);
-        //}
+        // [HttpGet, Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [HttpGet]
+        public async Task<IActionResult> GetItems()
+        {
+            try
+            {
+                List<ItemData> items = await _todoService.GetItems();
+                return Ok(items);
+            }
+            catch (Exception)
+            {
+                return ErrorHandler();
+            }
+        } 
 
         [HttpPost]
         public async Task<IActionResult> CreateItem([FromBody] ItemData data)
@@ -48,24 +66,13 @@ namespace TodoApp.Controllers
                         Errors = null
                     });
                 }
-                catch (Exception err)
+                catch (Exception)
                 {
-                    return BadRequest(new TodoResponse()
-                    {
-                        Data = data,
-                        Success = true,
-                        Errors = new List<string> { err.Message }
-                    });
+                    return ErrorHandler();
                 }
             }
 
-            var errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage).ToList();
-            return BadRequest(new TodoResponse()
-            {
-                Data = data,
-                Success = true,
-                Errors = errors
-            });
+            return ErrorHandler();
         }
 
         [HttpGet("{id}")]
@@ -85,35 +92,46 @@ namespace TodoApp.Controllers
         public async Task<IActionResult> UpdateItemById(int id, [FromBody] ItemData data)
         {
             if (id != data.Id)
-                if (id != data.Id)
-                {
-                    return BadRequest();
-                }
-
-            try
             {
-                await _todoService.UpdateItemById(id, data);
+                return ErrorHandler();
             }
-            catch (Exception err)
+
+            var result = await _todoService.UpdateItemById(id, data);
+
+            if (result == null)
             {
-                return BadRequest(err.Message);
+                return NotFound();
             }
 
             return Ok($"successfully changed item data with id {id}");
         }
 
-        //[httpdelete("{id}")]
-        //public async task<iactionresult> deleteitem(int id)
-        //{
-        //    var existitem = await _context.items.firstordefaultasync(x => x.id == id);
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteItem(int id)
+        {
 
-        //    if (existitem == null)
-        //        return notfound();
+            try
+            {
+                var result = await _todoService.DeleteItemById(id);
 
-        //    _context.items.remove(existitem);
-        //    await _context.savechangesasync();
+                if (result == null)
+                {
+                    return NotFound();
+                }
 
-        //    return ok(existitem);
-        //}
+                return Ok(new TodoResponse()
+                {
+                    Data = result,
+                    Success = true,
+                    Errors = null
+                });
+            }
+            catch (Exception)
+            {
+                return ErrorHandler();
+            }
+        }
+
+        
     }
 }

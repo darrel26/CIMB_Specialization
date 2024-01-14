@@ -9,8 +9,10 @@ namespace TodoApp.Services
 {
     public interface ITodoService
     {
+        Task<List<ItemData>> GetItems();
         Task<ItemData> GetItemById(int id);
-        Task<IActionResult> CreateItem(ItemData itemData);
-        Task<IActionResult> UpdateItemById(int id, ItemData itemData);
+        Task<ItemData> CreateItem(ItemData itemData);
+        Task<ItemData> UpdateItemById(int id, ItemData itemData);
+        Task<ItemData> DeleteItemById(int id);
     }
 }

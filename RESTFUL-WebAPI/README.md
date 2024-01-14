@@ -11,9 +11,8 @@
     │   ├── AuthResult.cs
     │   └── JwtConfig.cs
     ├── Controllers/
-    │   └── Auth/
     │       ├── AuthManagementController.cs
-    │       └── TodoController.cs
+    │       └── TodoController.cs   
     ├── Data/
     │   └── ApiDbContext.cs
     ├── Migrations

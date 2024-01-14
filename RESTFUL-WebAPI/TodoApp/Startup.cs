@@ -18,6 +18,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using TodoApp.Configuration;
 using TodoApp.Data;
+using TodoApp.Services;
 
 namespace TodoApp
 {
@@ -65,7 +66,7 @@ namespace TodoApp
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<ApiDbContext>();
 
             services.AddDbContext<ApiDbContext>(options => options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
-
+            services.AddScoped<ITodoService, TodoService>();
             services.AddControllers();
 
             services.AddSwaggerGen(c =>
@@ -95,6 +96,8 @@ namespace TodoApp
                     }
                 });
             });
+
+            services.AddScoped<ITodoService, TodoService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

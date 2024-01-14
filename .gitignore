@@ -1,3 +1,8 @@
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
 ## Execption for (app.db) cause it always error
 RESTFUL-WebAPI/TodoApp/app.db
 RESTFUL-WebAPI/TodoApp/app.db-shm

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Dion\\Specialization\\SESI3\\assignment\\assignment.csproj": {}
+    "D:\\Dion\\CIMB_Specialization\\Assignment\\1\\assignment.csproj": {}
   },
   "projects": {
-    "D:\\Dion\\Specialization\\SESI3\\assignment\\assignment.csproj": {
+    "D:\\Dion\\CIMB_Specialization\\Assignment\\1\\assignment.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Dion\\Specialization\\SESI3\\assignment\\assignment.csproj",
+        "projectUniqueName": "D:\\Dion\\CIMB_Specialization\\Assignment\\1\\assignment.csproj",
         "projectName": "assignment",
-        "projectPath": "D:\\Dion\\Specialization\\SESI3\\assignment\\assignment.csproj",
+        "projectPath": "D:\\Dion\\CIMB_Specialization\\Assignment\\1\\assignment.csproj",
         "packagesPath": "C:\\Users\\DG94602X\\.nuget\\packages\\",
-        "outputPath": "D:\\Dion\\Specialization\\SESI3\\assignment\\obj\\",
+        "outputPath": "D:\\Dion\\CIMB_Specialization\\Assignment\\1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\DG94602X\\AppData\\Roaming\\NuGet\\NuGet.Config",

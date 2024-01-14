@@ -19,7 +19,6 @@ namespace ConnectAPIToDB.Models
         {
             return new MySqlConnection(ConnectionString);
         }
-
         public List<EmployeeItem> GetAllEmployee()
         {
             List<EmployeeItem> list = new List<EmployeeItem>();
@@ -43,7 +42,7 @@ namespace ConnectAPIToDB.Models
                 return list;
             }
         }
-        public List<EmployeeItem> GetEmployee(string id)
+        public List<EmployeeItem> GetEmployee(int id)
         {
             List<EmployeeItem> list = new List<EmployeeItem>();
 
@@ -71,7 +70,6 @@ namespace ConnectAPIToDB.Models
             return list;
         }
 
-
         public String AddEmployee(EmployeeItem employee)
         {
             try
@@ -97,15 +95,29 @@ namespace ConnectAPIToDB.Models
                 throw;
             }
         }
-
-        private IActionResult Ok(string v)
+        public String EditEmployeeName(int id, String nama)
         {
-            throw new NotImplementedException();
-        }
+            try
+            {
+                using (MySqlConnection conn = GetConnection())
+                {
+                    conn.Open();
+                    using (MySqlCommand cmd = new MySqlCommand($"UPDATE employee SET nama='@nama' WHERE id='@id'"))
+                    {
 
-        private IActionResult StatusCode(int v, object p)
-        {
-            throw new NotImplementedException();
+                        cmd.Parameters.AddWithValue("@id", id);
+                        cmd.Parameters.AddWithValue("@nama", nama);
+
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+                    }
+                }
+                return "Success";
+            }
+            catch (Exception err)
+            {
+                return $"Error : {err.Message}";
+            }
         }
     }
 }

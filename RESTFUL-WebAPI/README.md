@@ -47,4 +47,38 @@
 
 ### Auth Management
 
-### Todo Services
+`/api/[controller]/[route]`
+
+```http
+  POST /api/AuthManagement/Registration
+```
+
+```http
+  POST /api/AuthManagement/Login
+```
+
+```http
+  POST /api/AuthManagement/RefreshToken
+```
+
+### Todo
+
+```http
+  GET /api/Todo
+```
+
+```http
+  GET /api/Todo/{id}
+```
+
+```http
+  POST /api/Todo/
+```
+
+```http
+  PUT /api/Todo/{id}
+```
+
+```http
+  DELETE /api/Todo/{id}
+```

@@ -6,15 +6,13 @@
 - Covers key API endpoints, request/response formats, and authentication mechanisms.
 
 ```
-.
 └── TodoApp/
     ├── Configuration/
     │   ├── AuthResult.cs
     │   └── JwtConfig.cs
     ├── Controllers/
-    │   └── Auth/
     │       ├── AuthManagementController.cs
-    │       └── TodoController.cs
+    │       └── TodoController.cs   
     ├── Data/
     │   └── ApiDbContext.cs
     ├── Migrations
@@ -82,3 +80,18 @@
 ```http
   DELETE /api/Todo/{id}
 ```
+
+## Mock Test
+Unit Test can be found in Todo_UnitTest_Mock
+
+```
+└── Todo_UnitTest_Mock/
+    ├── TodoTest.cs/
+```
+
+## Step to Run
+1. Run TodoTest.cs
+2. Click "View"
+3. Choose Test Explorer
+4. Run the test
+5. Get the result

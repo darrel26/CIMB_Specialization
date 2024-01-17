@@ -98,7 +98,7 @@ namespace Payment.Controllers
             _apiDbContext.paymentData.Remove(existItem);
             await _apiDbContext.SaveChangesAsync();
 
-            return Ok(existItem);
+            return new JsonResult(Ok(existItem)) { StatusCode = 204 };
         }
 
     }

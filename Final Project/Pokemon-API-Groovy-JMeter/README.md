@@ -7,7 +7,7 @@
 
 **Perform a looped HTTP GET request to the Pokémon API to search for Pikachu's species information. Start with an offset of 0 and limit the results to 20 per request.**
 1. Add new ***While Controller***
-   ![img_1.png](readme_assets/task_1/task_1_offset_counter.png)
+   ![img_1.png](readme_assets/task_1/task_1_while_controller.png)
 2. Create a counter set starting value 0 and increment 20 and store it to a variable named ***"offset"***
    ![img_2.png](readme_assets/task_1/task_1_offset_counter.png)
 
